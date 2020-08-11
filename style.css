@@ -1,0 +1,45 @@
+body {
+    background-color: aliceblue;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 600px;
+    height: 220px;
+    max-width: 80%;
+    text-align: center;
+    background-color: lightblue;
+    
+}
+.btn {
+    padding: 20px;
+    color: black;
+    background-color: blanchedalmond;
+}
+#starto {
+    text-decoration: black;
+}
+
+.btn-grid {
+    gap: 10px;
+    display: grid;
+}
+.btn:hover {
+    border-color: black;
+    border-style: dotted;
+}
+.controls {
+    text-align: center;
+    
+}
+.hide {
+    display: none;
+}
+.spacer {
+    padding: 50px;
+}
