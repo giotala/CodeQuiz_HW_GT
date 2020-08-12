@@ -10,7 +10,7 @@ body {
 }
 .container {
     width: 600px;
-    height: 220px;
+    height: 500px;
     max-width: 80%;
     text-align: center;
     background-color: lightblue;
@@ -42,4 +42,8 @@ body {
 }
 .spacer {
     padding: 50px;
+}
+.question {
+    padding-bottom: 50px;
+    font-size: 100px;
 }

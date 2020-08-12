@@ -2,7 +2,7 @@ var timeEl = document.querySelector(".timer");
 
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const startButton = document.getElementById('starto')
+const startBtn = document.getElementById('starto')
 const nextButton = document.getElementById('next-btn')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
@@ -14,7 +14,7 @@ var secondsLeft = 30;
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+      timeEl.textContent = secondsLeft + " seconds left til game over.";
   
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
@@ -28,15 +28,15 @@ function setTime() {
 
 //-------------question--------------
 
-startButton.addEventListener('click', startGame)
+startBtn.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
 })
 
 function startGame() {
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  startBtn.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - 1)
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
@@ -79,8 +79,8 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    startBtn.innerText = 'Restart'
+    startBtn.classList.remove('hide')
   }
 }
 
@@ -107,31 +107,27 @@ const questions = [
     ]
   },
   {
-    question: 'Who is the best YouTuber?',
+    question: 'Does CSS mean Caption style sheet?',
     answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
+      { text: 'Yes', correct: true },
+      { text: 'No', correct: false }
     ]
   },
   {
-    question: 'Is web development fun?',
+    question: 'When are we graduating from this awesome Coding bootcamp?',
     answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
+      { text: 'jan 2021?', correct: false },
+      { text: 'October 19 2020?', correct: true },
+      { text: 'December 25 2020?', correct: false },
+      { text: 'October 2120?', correct: false }
     ]
   },
   {
-    question: 'What is 4 * 2?',
+    question: 'Who is your favorite instructor of all time?',
     answers: [
-      { text: '6', correct: false },
-      { text: '8', correct: true }
+      { text: ' Rachel Thiim', correct: true },
+      { text: 'or Mrs. Thiim', correct: true }
     ]
   }
-  if (answers.correct = false) {
-      
-  }
+  
 ]
